@@ -1,20 +1,20 @@
+const Cart = ({ cart, onRemove }) => {
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-import React from 'react';
-
-const Cart = ({ cart }) => {
   return (
     <div className="cart">
-      <h2>Shopping Cart</h2>
-      <ul>
-        {cart.map((item) => (
-          <li key={item.id}>
-            {item.name} - ${item.price.toFixed(2)}
-          </li>
-        ))}
-      </ul>
-      <p>Total: ${cart.reduce((total, item) => total + item.price, 0).toFixed(2)}</p>
+      <h2>🛒 Cart</h2>
+      {cart.length === 0 ? <p>No items in cart.</p> : (
+        <ul>
+          {cart.map((item) => (
+            <li key={item.id}>
+              {item.name} x {item.quantity} - ${item.price.toFixed(2)} 
+              <button onClick={() => onRemove(item.id)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <h3>Total: ${total.toFixed(2)}</h3>
     </div>
   );
 };
-
-export default Cart;
