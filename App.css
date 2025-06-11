@@ -1,27 +1,26 @@
-/* App.css */
-.app {
-    display: flex;
-    justify-content: space-between;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  .product img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .cart {
-    flex: 1;
-    border: 1px solid #378391;
-    padding: 10px;
-  }
-  
+.app-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.main-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.product-list, .cart {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 50%;
+}
+
+.product-card {
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
